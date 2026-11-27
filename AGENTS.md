@@ -1,37 +1,37 @@
-# Jev × CUAD · Instrucciones para Codex
+# Jev × CUAD · Instructions for Codex
 
-## 1. Protocolo de construcción y revisión
+## 1. Build and review workflow
 
-Ander está aprendiendo a diseñar software. Mantén presente la arquitectura completa y desarrolla **un único módulo por iteración**. Si Ander pide arquitectura o una explicación, responde a ese nivel. Cuando pida comenzar la implementación, empieza por el módulo que indique o, en su defecto, por `cases.py`.
+Ander is learning software design. Keep the full architecture in mind and develop **one module per iteration**. When Ander asks for architecture or an explanation, answer at that level. When he asks to start implementation, begin with the module he specifies or default to `cases.py`.
 
-1. **Antes de escribir**, identifica el módulo, el problema que resuelve, sus entradas, su salida y un ejemplo verificable a mano. Explica por qué propones cada clase o función relevante. Hazlo brevemente en español.
-2. **Implementa la pieza acordada.** Limita los cambios al módulo activo y a las pruebas o datos mínimos necesarios para comprobarlo. Representa servicios futuros con datos de prueba o una función simulada. Deja la creación de los demás módulos, incluidos sus esqueletos, para sus propias iteraciones.
-3. **Entrega el módulo para lectura.** Indica los archivos modificados y el orden sugerido para leerlos. Recorre un ejemplo desde la entrada hasta la salida, explica una decisión de diseño y facilita el comando exacto para verificarlo. Distingue las pruebas ejecutadas, sus resultados y lo pendiente.
-4. **Detente tras la entrega.** Espera a que Ander revise el código y autorice expresamente avanzar. Una pregunta abre una explicación; una corrección abre otra revisión del mismo módulo. Una prueba exitosa por sí sola no autoriza el siguiente. Si una modificación exige tocar otro módulo ya aprobado, explica el motivo y acuerda el alcance antes de editarlo.
+1. **Before writing code**, name the module and describe the problem it solves, its inputs, its output, and an example Ander can check by hand. Briefly explain in Spanish why each relevant class or function belongs in the design.
+2. **Implement the agreed piece.** Limit changes to the active module and the minimum tests or data needed to verify it. Use test data or a stub function for services that will be implemented later. Create other modules and their scaffolding in their own iterations.
+3. **Hand over the module for review.** List the changed files in the suggested reading order. Walk through an example from input to output, explain one design decision, and give the exact command to verify it. State which tests ran, what they showed, and what remains open.
+4. **Pause after the handoff.** Wait for Ander to review the code and explicitly approve moving forward. Answer questions and make requested corrections within the current module. A passing test still requires Ander's approval before the next module. If a change requires editing another approved module, explain why and agree on the scope first.
 
-## 2. Idioma y estilo de código
+## 2. Code language and style
 
-Escribe todo el código en inglés, incluidas las celdas de código del notebook. Usa inglés para módulos, clases, funciones, métodos, parámetros, variables, constantes, pruebas, campos JSON propios, opciones de CLI, mensajes, instrucciones del modelo y rúbricas. Usa `snake_case` para módulos, funciones y variables, `PascalCase` para clases y `UPPER_SNAKE_CASE` para constantes. Conserva los nombres del contrato externo de Jev y el texto original de CUAD.
+Write all code in English, including notebook code cells. Use English for modules, classes, functions, methods, parameters, variables, constants, tests, internal JSON fields, CLI options, messages, model instructions, and rubrics. Use `snake_case` for modules, functions, and variables, `PascalCase` for classes, and `UPPER_SNAKE_CASE` for constants. Preserve Jev's external field names and the original CUAD text.
 
-Incluye comentarios en inglés donde ayuden a comprender una decisión o restricción. Por ejemplo: `# Keep the replacement in the same slot to control for position effects.` Escribe también en inglés las docstrings. Usa nombres descriptivos y funciones pequeñas. Justifica las clases por los datos o comportamientos que agrupan. Las explicaciones de diseño y revisión dirigidas a Ander van en español.
+Write comments in English where they clarify a decision or constraint. An example is `# Keep the replacement in the same slot to control for position effects.` Write docstrings in English as well. Use descriptive names and small functions. Justify each class by the data or behavior it groups. Explain design decisions and review findings to Ander in Spanish.
 
-## 3. Qué se construye
+## 3. Project goal
 
-Una herramienta Python para comprobar si Jev localiza la cláusula que responde una pregunta contractual y detecta cuándo la evidencia es insuficiente. La CLI con Rich permitirá previsualizar exactamente qué recibe el modelo, ejecutar uno o diez casos e inspeccionar una corrida guardada. El notebook de Kaggle reutilizará el paquete para explicar un caso, reproducir los resultados y graficar las diferencias. La vista previa y el informe funcionan sin red ni credenciales.
+Build a Python tool to test whether Jev finds the clause that answers a contract question and detects insufficient evidence. The Rich CLI previews exactly what the model receives, runs one or ten cases, and inspects saved runs. The Kaggle notebook reuses the package to walk through a case, reproduce results, and chart differences. Previewing and reporting work offline and require no credentials.
 
-## 4. Datos y diseño del experimento
+## 4. Data and experiment design
 
-Usa CUAD v1 de The Atticus Project, revisión `a3c393f5d103fd0c516374e4fdff676c8176dcb1`, en `data/raw/CUAD_v1.json`. Registra procedencia, revisión, licencia y adaptaciones en el README. [Dataset](https://huggingface.co/datasets/theatticusproject/cuad)
+Use CUAD v1 from The Atticus Project at revision `a3c393f5d103fd0c516374e4fdff676c8176dcb1` in `data/raw/CUAD_v1.json`. Document the source, revision, license, and adaptations in the README. [Dataset](https://huggingface.co/datasets/theatticusproject/cuad)
 
-Empieza con un caso revisado sobre el preaviso para impedir la renovación. Amplía la muestra a diez en `data/cases.json`. Cada `Case` contiene identificador, pregunta, fragmento anotado suficiente y tres distractores trazables. Verifica que los distractores, incluso juntos, dejan la pregunta sin responder.
+Start with one reviewed case about the notice required to prevent renewal. Expand the sample to ten cases in `data/cases.json`. Each `Case` contains an identifier, a question, an annotated passage sufficient to answer it, and three distractors with traceable sources. Verify that the distractors leave the question unanswered even when read together.
 
-Prepara dos objetos `Variant` por caso. En `with_evidence` presenta el fragmento correcto y dos distractores. En `without_evidence` sustituye el fragmento correcto por el tercer distractor en su misma posición. Distribuye reproduciblemente la posición correcta entre casos. En ambas variantes ofrece A, B, C y `none`. Mantén la etiqueta esperada, la condición y las anotaciones en el registro local. El modelo solo recibe la pregunta contractual y los tres textos visibles junto con las instrucciones de sus dos tareas.
+Build two `Variant` objects per case. In `with_evidence`, present the correct passage and two distractors. In `without_evidence`, replace the correct passage with the third distractor in the same slot. Vary the correct passage's position across cases in a reproducible way. Offer A, B, C, and `none` in both variants. Keep the expected label, experimental condition, and annotations in the local record. Send the model only the contract question, the three visible passages, and the instructions for both tasks.
 
-## 5. Contrato con Jev
+## 5. Jev API contract
 
-Envía una petición JSON por variante a `POST https://api.typesafe.ai/v1/systemone`, con autenticación Bearer y Content-Type application/json. El punto de entrada obtiene `TYPESAFE_API_KEY` del entorno y la pasa al cliente. Registra el modelo solicitado y el que devuelve la API. El modelo inicial es `jev-latest`.
+Send one JSON request per variant to `POST https://api.typesafe.ai/v1/systemone` with Bearer authentication and `Content-Type: application/json`. The entry point reads `TYPESAFE_API_KEY` from the environment and passes it to the client. Record the requested model and the model returned by the API. Use `jev-latest` initially.
 
-Jev evalúa preguntas tipadas independientemente sobre un estado compartido. `choice` selecciona un fragmento. `score` mide la suficiencia del conjunto completo para contestar la pregunta contractual. La confianza de la elección y el score tienen significados distintos. Este ejemplo ficticio muestra el contrato de la petición:
+Jev evaluates each typed question independently against the shared state. `choice` selects a passage. `score` measures whether the full set of passages contains enough evidence to answer the contract question. Choice confidence and the sufficiency score have distinct meanings. The following request uses fictional clauses.
 
 ```json
 {
@@ -59,30 +59,30 @@ Jev evalúa preguntas tipadas independientemente sobre un estado compartido. `ch
 }
 ```
 
-Lee `answers.passage.choice` y `answers.sufficiency.score`. Valida la opción y conserva el score decimal entre 0 y 2. Registra timeout, error HTTP o respuesta inválida como fallos diferenciados de una elección válida de `none`. [Documentación oficial](https://docs.typesafe.ai/introduction/quickstart)
+Read `answers.passage.choice` and `answers.sufficiency.score`. Validate the selected option and preserve the decimal score between 0 and 2. Record timeouts, HTTP errors, and invalid responses as failures. Treat a valid `none` as abstention. [Official documentation](https://docs.typesafe.ai/introduction/quickstart)
 
-## 6. Mapa de módulos y dependencias
+## 6. Modules and dependencies
 
-Este orden guía la construcción. Cada fila corresponde a una entrega y su revisión.
+Build in the order below. Deliver each row for its own review.
 
-| Orden | Pieza | Contrato y verificación |
+| Order | Module or artifact | Contract and verification |
 |---|---|---|
-| 1 | `src/jev_lab/cases.py` | Define `Case`, `Variant` y `build_pair`. De un caso obtiene dos variantes. Verifica que cambia un único fragmento y que ambas tienen tres opciones de texto. |
-| 2 | `questions.py` | Construye la petición desde el modelo, la pregunta y los fragmentos visibles. Incluye la rúbrica y usa el mismo constructor para vista previa y ejecución. Verifica el JSON sin credenciales. |
-| 3 | `client.py` | Envía la petición mediante `urllib.request` con timeout. Valida la respuesta, conserva el original y el uso de tokens cuando esté disponible. Prueba los caminos de éxito y fallo con transporte simulado. |
-| 4 | `experiment.py` | Coordina variantes y función de consulta. Une cada intento con la referencia local y escribe un registro por intento en `results/`, en un JSONL por corrida. Comprueba primero un par con consulta simulada. |
-| 5 | `evaluation.py` | Lee registros guardados y produce métricas y resultados por par. Prueba el ejemplo de aceptación de la sección 7 sin llamadas a Jev. |
-| 6 | `cli.py` | Usa argparse y Rich para ofrecer `preview`, `run` y `report`. Delega construcción, ejecución y métricas a los módulos correspondientes. |
-| 7 | `notebooks/cuad_jev.ipynb` | Carga la misma corrida que la CLI, reutiliza el evaluador y visualiza las diferencias por par con matplotlib. Revisión independiente después de aprobar la CLI. |
+| 1 | `src/jev_lab/cases.py` | Define `Case`, `Variant`, and `build_pair`. Build two variants from a case. Check that exactly one passage changes and that both variants contain three passages. |
+| 2 | `questions.py` | Build the request from the model, question, and visible passages. Include the rubric and use the same builder for previewing and running. Verify the JSON without credentials. |
+| 3 | `client.py` | Send the request with `urllib.request` and a timeout. Validate the response, keep the original response, and record token usage when available. Test success and failure with a simulated transport. |
+| 4 | `experiment.py` | Coordinate the variants and the query function. Associate each attempt with the local reference and write one record per attempt to a JSONL file in `results/`, with one file per run. Verify one pair first using a simulated query. |
+| 5 | `evaluation.py` | Read saved records and produce metrics and per-pair results. Test the acceptance example in section 7 offline. |
+| 6 | `cli.py` | Use `argparse` and Rich to offer `preview`, `run`, and `report`. Delegate request construction, execution, and metric calculation to the corresponding modules. |
+| 7 | `notebooks/cuad_jev.ipynb` | Load the same run as the CLI, reuse the evaluator, and chart per-pair differences with Matplotlib. Review the notebook separately after the CLI is approved. |
 
-Declara las dependencias en pyproject.toml. Usa json, pathlib y dataclasses de la biblioteca estándar, python-dotenv para el entorno local y pytest para verificar el comportamiento. Implementa clases adicionales solo cuando puedas explicar la necesidad concreta.
+Declare dependencies in `pyproject.toml`. Use `json`, `pathlib`, and `dataclasses` from the standard library, `python-dotenv` for the local environment, and `pytest` to verify behavior. Add classes only when you can explain the concrete need they address.
 
-## 7. Registro, métricas y aceptación
+## 7. Logging, metrics, and acceptance
 
-Conserva en JSONL el identificador de corrida, caso, variante e intento, la petición exacta, la etiqueta esperada local, el modelo devuelto, la respuesta y su estado. Incluye el uso de tokens cuando esté disponible. Excluye credenciales. Identifica las simulaciones. Los reintentos deben poder auditarse y cada variante cuenta una sola vez en el resumen.
+Record the run, case, variant, and attempt identifiers, the exact request, the local expected label, the returned model, and the response and its status in JSONL. Include token usage when available. Keep credentials out of the records and identify simulations. Make retries auditable and count each variant once in the summary.
 
-- **Selección correcta**: aciertos sobre respuestas válidas con evidencia.
-- **Abstención correcta**: elecciones de `none` sobre respuestas válidas sin evidencia.
-- **Cambio por par**: `score_with - score_without`. Conserva resultados negativos y ceros. Muestra denominadores, fallos y pares incompletos.
-- **Prueba verificable a mano**: si B es correcta con evidencia, Jev elige B en ambas variantes y los scores son 1,8 y 0,7, el resumen debe mostrar un acierto con evidencia, un error de abstención y una caída de 1,1.
-- **Aceptación final**: CLI y notebook reproducen el mismo informe desde el mismo JSONL sin contactar la API. Describe por separado la evidencia obtenida con llamadas reales.
+- **Correct selection.** Divide correct selections by valid responses with evidence.
+- **Correct abstention.** Divide `none` selections by valid responses without evidence.
+- **Change per pair.** Calculate `score_with - score_without`. Preserve negative values and zeros. Show denominators, failures, and incomplete pairs.
+- **Example to check by hand.** If B is correct with evidence, Jev chooses B in both variants, and the scores are 1.8 and 0.7, the summary must show one correct selection with evidence, one abstention error, and a drop of 1.1.
+- **Final acceptance.** The CLI and notebook reproduce the same report from the same JSONL file offline. Document evidence from live API calls separately.
