@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jev-lab"
+version = "0.1.0"
+description = "Paired evidence experiments for Jev on CUAD contracts"
+requires-python = ">=3.10"
+dependencies = ["python-dotenv>=1", "rich>=13"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+jev-lab = "jev_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,322 @@
+{
+  "source": {
+    "dataset": "CUAD v1",
+    "publisher": "The Atticus Project",
+    "revision": "a3c393f5d103fd0c516374e4fdff676c8176dcb1",
+    "url": "https://huggingface.co/datasets/theatticusproject/cuad/blob/a3c393f5d103fd0c516374e4fdff676c8176dcb1/CUAD_v1/CUAD_v1.json",
+    "license": "CC BY 4.0",
+    "adaptation": "The question uses the CUAD annotation's Details text. The annotated evidence and the three manually selected distractors are verbatim excerpts."
+  },
+  "cases": [
+    {
+      "case_id": "zounds-renewal-notice",
+      "cuad_question_id": "Zounds Hearing, Inc. - MANUFACTURING DESIGN MARKETING AGREEMENT__Notice Period To Terminate Renewal",
+      "question": "What is the notice period required to terminate renewal?",
+      "evidence": {
+        "text": "This Agreement will renew automatically thereafter for successive one-year terms unless and until one Party gives notification of termination with at least sixty (60) days written notice.",
+        "document_title": "Zounds Hearing, Inc. - MANUFACTURING DESIGN MARKETING AGREEMENT",
+        "paragraph_index": 0,
+        "start_offset": 1948
+      },
+      "distractors": [
+        {
+          "text": "Either Party may terminate this Agreement and either may terminate a purchase order, effective upon written notice in any of the following events: (a) the other Party materially breaches this Agreement and such breach remains uncured for thirty (30) days following written notice of breach to the breaching Party;",
+          "document_title": "Zounds Hearing, Inc. - MANUFACTURING DESIGN MARKETING AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 19366
+        },
+        {
+          "text": "In the event Manufacturer in good faith believes that Manufacturer's Products are nonconforming under the specifications agreed to among the Parties (the \"Standards\"), Manufacturer shall give written notice to Subcontractor specifying in detail the nonconformity within thirty (30) days of Manufacturer's receipt of such Manufacturer's Products.",
+          "document_title": "Zounds Hearing, Inc. - MANUFACTURING DESIGN MARKETING AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 15492
+        },
+        {
+          "text": "The first installment will be due thirty (30) days following the Effective Date and the second installment will be due sixty (60) days following the Effective Date.",
+          "document_title": "Zounds Hearing, Inc. - MANUFACTURING DESIGN MARKETING AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 2465
+        }
+      ]
+    },
+    {
+      "case_id": "legacy-education-renewal-notice",
+      "cuad_question_id": "LegacyEducationAllianceInc_20200330_10-K_EX-10.18_12090678_EX-10.18_Development Agreement__Notice Period To Terminate Renewal",
+      "question": "What is the notice period required to terminate renewal?",
+      "evidence": {
+        "text": "The Term shall automatically renew thereafter for successive 5-year terms unless either party provides prior written notice of termination not less than 90 days prior to the end of such five-year term.",
+        "document_title": "LegacyEducationAllianceInc_20200330_10-K_EX-10.18_12090678_EX-10.18_Development Agreement",
+        "paragraph_index": 0,
+        "start_offset": 27523
+      },
+      "distractors": [
+        {
+          "text": "Neither party may assign this Agreement without the other party's prior written consent.",
+          "document_title": "LegacyEducationAllianceInc_20200330_10-K_EX-10.18_12090678_EX-10.18_Development Agreement",
+          "paragraph_index": 0,
+          "start_offset": 38102
+        },
+        {
+          "text": "T&B and Tarek El Moussa shall be named as an additional insured on such insurance and proof of such inclusion shall be provided to T&B.",
+          "document_title": "LegacyEducationAllianceInc_20200330_10-K_EX-10.18_12090678_EX-10.18_Development Agreement",
+          "paragraph_index": 0,
+          "start_offset": 31674
+        },
+        {
+          "text": "Within fifteen (15) days of the receipt of such notice or such other period as may be agreed to by the parties, T&B and LEA shall meet and confer to formulate a strategy for resolving the alleged infringement.",
+          "document_title": "LegacyEducationAllianceInc_20200330_10-K_EX-10.18_12090678_EX-10.18_Development Agreement",
+          "paragraph_index": 0,
+          "start_offset": 8948
+        }
+      ]
+    },
+    {
+      "case_id": "gpaq-renewal-notice",
+      "cuad_question_id": "GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.6_11951677_EX-10.6_License Agreement__Notice Period To Terminate Renewal",
+      "question": "What is the notice period required to terminate renewal?",
+      "evidence": {
+        "text": "Thereafter, the agreement shall automatically renew for successive five (5)-year terms, unless either Party gives written notice to the other Party of intent not to renew at least six (6) months prior to the expiration of the then-current Term.",
+        "document_title": "GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.6_11951677_EX-10.6_License Agreement",
+        "paragraph_index": 0,
+        "start_offset": 24053
+      },
+      "distractors": [
+        {
+          "text": "The Village Media Company shall not, directly or indirectly, assign, sublicense or otherwise transfer any of its rights or obligations hereunder without the prior written consent of PFHOF.",
+          "document_title": "GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.6_11951677_EX-10.6_License Agreement",
+          "paragraph_index": 0,
+          "start_offset": 39424
+        },
+        {
+          "text": "To the extent that the Village Media Company and PFHOF work collaboratively on media projects, the EP's services on such projects for the benefit of PFHOF shall be charged to PFHOF at cost without markup.",
+          "document_title": "GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.6_11951677_EX-10.6_License Agreement",
+          "paragraph_index": 0,
+          "start_offset": 20867
+        },
+        {
+          "text": "If the Parties reach an agreement within thirty (30) days, then the applicable license shall be subject to the terms and conditions of this Agreement and the Village Media Company shall pay to PFHOF a License Fee for such license in accordance with this Agreement.",
+          "document_title": "GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.6_11951677_EX-10.6_License Agreement",
+          "paragraph_index": 0,
+          "start_offset": 16394
+        }
+      ]
+    },
+    {
+      "case_id": "sonos-renewal-notice",
+      "cuad_question_id": "Sonos, Inc. - Manufacturing Agreement __Notice Period To Terminate Renewal",
+      "question": "What is the notice period required to terminate renewal?",
+      "evidence": {
+        "text": "This Agreement shall be automatically renewed for additional successive one (1) year periods, unless written notice of non-renewal is received no later than six (6) months prior to the expiration of the then current term.",
+        "document_title": "Sonos, Inc. - Manufacturing Agreement ",
+        "paragraph_index": 0,
+        "start_offset": 74791
+      },
+      "distractors": [
+        {
+          "text": "This Agreement shall be governed by the law of California, U.S.A. and the arbitrators shall apply California law to the merits of any dispute or claim, without reference to conflict of law principles.",
+          "document_title": "Sonos, Inc. - Manufacturing Agreement ",
+          "paragraph_index": 0,
+          "start_offset": 85266
+        },
+        {
+          "text": "Any attempted assignment or delegation in violation of this section by either party without the prior written consent of the other will be void.",
+          "document_title": "Sonos, Inc. - Manufacturing Agreement ",
+          "paragraph_index": 0,
+          "start_offset": 82323
+        },
+        {
+          "text": "In the event IAC loses or discontinues their EICC membership during the term of this Agreement, Sonos must be notified in writing within three (3) business days, including the reason or reasons the membership has been disrupted.",
+          "document_title": "Sonos, Inc. - Manufacturing Agreement ",
+          "paragraph_index": 0,
+          "start_offset": 30969
+        }
+      ]
+    },
+    {
+      "case_id": "xacct-renewal-notice",
+      "cuad_question_id": "XACCT Technologies, Inc.SUPPORT AND MAINTENANCE AGREEMENT__Notice Period To Terminate Renewal",
+      "question": "What is the notice period required to terminate renewal?",
+      "evidence": {
+        "text": "The Agreement will be automatically          renewed for additional one (1) year terms (subject to applicable fee          adjustments) unless thirty (30) days prior to the anniversary of the          Effective Date Licensee gives written notice to XACCT of its intention          not to renew.",
+        "document_title": "XACCT Technologies, Inc.SUPPORT AND MAINTENANCE AGREEMENT",
+        "paragraph_index": 0,
+        "start_offset": 9162
+      },
+      "distractors": [
+        {
+          "text": "The laws of the State of California          shall govern all issues arising under or relating to this Agreement,          without giving effect to the conflict of laws principles thereof.",
+          "document_title": "XACCT Technologies, Inc.SUPPORT AND MAINTENANCE AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 12830
+        },
+        {
+          "text": "XACCT'S SOLE LIABILITY AND LICENSEE'S EXCLUSIVE REMEDY          FOR DAMAGES WITH RESPECT TO PRODUCT MAINTENANCE SHALL BE AS SET FORTH          IN THE LICENSE AGREEMENT.",
+          "document_title": "XACCT Technologies, Inc.SUPPORT AND MAINTENANCE AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 11490
+        },
+        {
+          "text": "XACCT may also terminate Support          Services if Licensee breaches any provision of this Agreement or the          License Agreement and such breach is not remedied within thirty (30)          days after Licensee receives written notice of the breach.",
+          "document_title": "XACCT Technologies, Inc.SUPPORT AND MAINTENANCE AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 9665
+        }
+      ]
+    },
+    {
+      "case_id": "bolivar-mining-renewal-notice",
+      "cuad_question_id": "BOLIVARMININGCORP_05_23_2003-EX-2.1-VISP WEB SITE BUILDING AND HOSTING AGREEMENT__Notice Period To Terminate Renewal",
+      "question": "What is the notice period required to terminate renewal?",
+      "evidence": {
+        "text": "This agreement shall renew automatically each year thereafter, unless either party serves written notice of its intention not to renew, on the other at least 90 days prior to the expiration of the then current term of this agreement.",
+        "document_title": "BOLIVARMININGCORP_05_23_2003-EX-2.1-VISP WEB SITE BUILDING AND HOSTING AGREEMENT",
+        "paragraph_index": 0,
+        "start_offset": 974
+      },
+      "distractors": [
+        {
+          "text": "All questions regarding the validity, interpretation, performance and enforcement of the provisions of this Agreement shall be governed by the laws of the state of New York.",
+          "document_title": "BOLIVARMININGCORP_05_23_2003-EX-2.1-VISP WEB SITE BUILDING AND HOSTING AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 8526
+        },
+        {
+          "text": "This agreement shall be for a term of five years from the date of this document.",
+          "document_title": "BOLIVARMININGCORP_05_23_2003-EX-2.1-VISP WEB SITE BUILDING AND HOSTING AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 893
+        },
+        {
+          "text": "If the ISP does not have 250 users within the first 90 days we will charge $25.00 each month thereafter.",
+          "document_title": "BOLIVARMININGCORP_05_23_2003-EX-2.1-VISP WEB SITE BUILDING AND HOSTING AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 1925
+        }
+      ]
+    },
+    {
+      "case_id": "national-processing-renewal-notice",
+      "cuad_question_id": "NATIONALPROCESSINGINC_07_18_1996-EX-10.4-SPONSORSHIP AGREEMENT__Notice Period To Terminate Renewal",
+      "question": "What is the notice period required to terminate renewal?",
+      "evidence": {
+        "text": "This Agreement shall automatically renew for successive one-year terms unless one party gives the other party written notice of non-renewal at least six months prior to automatic renewal.",
+        "document_title": "NATIONALPROCESSINGINC_07_18_1996-EX-10.4-SPONSORSHIP AGREEMENT",
+        "paragraph_index": 0,
+        "start_offset": 21374
+      },
+      "distractors": [
+        {
+          "text": "This Agreement and its interpretation shall be governed by the laws of the United States and, to the extent not inconsistent therewith, by the laws of the Commonwealth of Kentucky without regard to conflicts of laws rules.",
+          "document_title": "NATIONALPROCESSINGINC_07_18_1996-EX-10.4-SPONSORSHIP AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 27159
+        },
+        {
+          "text": "Neither party shall assign this Agreement or any rights under it except with the prior written consent of the other.",
+          "document_title": "NATIONALPROCESSINGINC_07_18_1996-EX-10.4-SPONSORSHIP AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 27524
+        },
+        {
+          "text": "Notices sent by United States Mail, certified mail, return receipt requested, are given five business days after delivery to the United States Postal Service unless prior actual receipt by the addressee is proven.",
+          "document_title": "NATIONALPROCESSINGINC_07_18_1996-EX-10.4-SPONSORSHIP AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 25941
+        }
+      ]
+    },
+    {
+      "case_id": "cool-technologies-renewal-notice",
+      "cuad_question_id": "COOLTECHNOLOGIES,INC_10_25_2017-EX-10.71-Strategic Alliance Agreement__Notice Period To Terminate Renewal",
+      "question": "What is the notice period required to terminate renewal?",
+      "evidence": {
+        "text": "This Agreement shall be automatically renewed for successive one year periods unless either party gives written notice of termination to the other party at least thirty (30) days prior to the date of expiration.",
+        "document_title": "COOLTECHNOLOGIES,INC_10_25_2017-EX-10.71-Strategic Alliance Agreement",
+        "paragraph_index": 0,
+        "start_offset": 3987
+      },
+      "distractors": [
+        {
+          "text": "This Agreement shall be governed by and construed in accordance with the laws of the State of Missouri.",
+          "document_title": "COOLTECHNOLOGIES,INC_10_25_2017-EX-10.71-Strategic Alliance Agreement",
+          "paragraph_index": 0,
+          "start_offset": 12540
+        },
+        {
+          "text": "Neither party shall assign or delegate this Agreement or any rights, duties or obligations hereunder to any other person and/or entity without prior express written approval of the other party.",
+          "document_title": "COOLTECHNOLOGIES,INC_10_25_2017-EX-10.71-Strategic Alliance Agreement",
+          "paragraph_index": 0,
+          "start_offset": 11225
+        },
+        {
+          "text": "Materials used in any engagement undertaken pursuant to this Agreement shall not be altered or changed without the consent of both parties.",
+          "document_title": "COOLTECHNOLOGIES,INC_10_25_2017-EX-10.71-Strategic Alliance Agreement",
+          "paragraph_index": 0,
+          "start_offset": 5421
+        }
+      ]
+    },
+    {
+      "case_id": "imageware-renewal-notice",
+      "cuad_question_id": "IMAGEWARESYSTEMSINC_12_20_1999-EX-10.22-MAINTENANCE AGREEMENT__Notice Period To Terminate Renewal",
+      "question": "What is the notice period required to terminate renewal?",
+      "evidence": {
+        "text": "This      Agreement shall automatically renew for consecutive one (1) year terms      at XIMAGE's then prevailing rates at the end of each one (1) year term      unless either party gives at least sixty (60) days prior written notice      of the non-renewal of this Agreement.",
+        "document_title": "IMAGEWARESYSTEMSINC_12_20_1999-EX-10.22-MAINTENANCE AGREEMENT",
+        "paragraph_index": 0,
+        "start_offset": 4752
+      },
+      "distractors": [
+        {
+          "text": "The interests of MORPHO in this Agreement are personal and shall not be      assigned, transferred, shared or divided in any manner by MORPHO without a      prior written consent of XIMAGE.",
+          "document_title": "IMAGEWARESYSTEMSINC_12_20_1999-EX-10.22-MAINTENANCE AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 19759
+        },
+        {
+          "text": "All interventions on site are subject to a minimum total charge of      $2,000.",
+          "document_title": "IMAGEWARESYSTEMSINC_12_20_1999-EX-10.22-MAINTENANCE AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 13031
+        },
+        {
+          "text": "MORPHO shall pay all charges under this Agreement,      including the total Annual Maintenance Charge, within thirty (30) days      after receipt of a valid invoice from XIMAGE.",
+          "document_title": "IMAGEWARESYSTEMSINC_12_20_1999-EX-10.22-MAINTENANCE AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 8230
+        }
+      ]
+    },
+    {
+      "case_id": "bnc-mortgage-renewal-notice",
+      "cuad_question_id": "BNCMORTGAGEINC_05_17_1999-EX-10.4-LICENSING AND WEB SITE HOSTING AGREEMENT__Notice Period To Terminate Renewal",
+      "question": "What is the notice period required to terminate renewal?",
+      "evidence": {
+        "text": "This Agreement shall renew automatically thereafter for successive one year periods until terminated pursuant to Section 12 herein or unless either Client or TrueLink deliver to the other written notice of intent not to renew no later than thirty (30) days prior to the end of said year.",
+        "document_title": "BNCMORTGAGEINC_05_17_1999-EX-10.4-LICENSING AND WEB SITE HOSTING AGREEMENT",
+        "paragraph_index": 0,
+        "start_offset": 24777
+      },
+      "distractors": [
+        {
+          "text": "This Agreement shall be governed, construed and interpreted in accordance with the laws of the State of California (without respect to principles of conflicts of law).",
+          "document_title": "BNCMORTGAGEINC_05_17_1999-EX-10.4-LICENSING AND WEB SITE HOSTING AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 29517
+        },
+        {
+          "text": "Invoices will be paid within 15 days of receipt.",
+          "document_title": "BNCMORTGAGEINC_05_17_1999-EX-10.4-LICENSING AND WEB SITE HOSTING AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 12448
+        },
+        {
+          "text": "All notices will be deemed given (i) when delivered by hand, (ii) one (l) day after delivery to a reputable overnight carrier, or (iii) three (3) days after placement in first-class mail, postage prepaid, return receipt requested.",
+          "document_title": "BNCMORTGAGEINC_05_17_1999-EX-10.4-LICENSING AND WEB SITE HOSTING AGREEMENT",
+          "paragraph_index": 0,
+          "start_offset": 27493
+        }
+      ]
+    }
+  ]
+}
